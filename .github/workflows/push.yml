@@ -3,7 +3,7 @@ name: Faz push das imagens
 on:
   push:
     branchs:
-      - master
+      - main
   pull_request:
     branchs:
       - 'feature/**'
@@ -51,7 +51,7 @@ jobs:
   
     - name: Faz build e push da imagem 1.23
       run: |
-        make build.and.push IMAGE_TAG=3.8 CONTAINERFILE=Containerfile_1.23 USERNAME=${{ github.actor }} PASSWORD=${{ secrets.GITHUB_TOKEN }}
+        make build.and.push IMAGE_TAG=1.23 CONTAINERFILE=Containerfile_1.23 USERNAME=${{ github.actor }} PASSWORD=${{ secrets.GITHUB_TOKEN }}
         make build.and.push IMAGE_TAG=latest CONTAINERFILE=Containerfile_1.23 USERNAME=${{ github.actor }} PASSWORD=${{ secrets.GITHUB_TOKEN }}
 
     - name: Lista imagens
