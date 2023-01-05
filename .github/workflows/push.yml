@@ -4,11 +4,6 @@ on:
   push:
     branchs:
       - main
-  pull_request:
-    branchs:
-      - 'feature/**'
-      - 'hotfix/**'
-      - 'refactor/**'
 
 jobs:
   push:
