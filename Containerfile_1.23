@@ -1,0 +1,6 @@
+FROM nginx:1.23
+
+RUN openssl req -subj '/C=BR/ST=Rio Grande do Norte/L=Natal/O=Imobanco/OU=Imobanco TI/CN=imobanco.com.br/emailAddress=suporte@imobanco.com.br' \
+-x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout /etc/ssl/private/nginx-selfsigned.key \
+-out /etc/ssl/certs/nginx-selfsigned.crt
