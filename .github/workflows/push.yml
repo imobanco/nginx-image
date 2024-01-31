@@ -8,10 +8,10 @@ on:
 jobs:
   push:
     name: Build & Push
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         # Nix Flakes doesn't work on shallow clones
         fetch-depth: 0
@@ -32,7 +32,7 @@ jobs:
 
     # Remove podman via apt-get
     - run: |
-        sudo apt-get purge -y podman containers-image containers-common
+        sudo apt-get purge -y podman
         sudo apt-get autoremove --purge
         sudo apt-get -y clean
         podman --version || echo podman not installed
